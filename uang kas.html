@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website Karang Taruna KPR PDAM Klawuyuk Kota Sorong, Papua Barat Daya.">
+  <title>Karang Taruna KPR PDAM Klawuyuk</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- HEADER / BUBBLE NAVBAR -->
+  <header class="header" id="mainHeader">
+    <div class="nav-wrap">
+      <a href="#beranda" class="brand">
+        <img src="images/logo.jpg" alt="Logo Karang Taruna KPR PDAM Klawuyuk">
+        
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="bubble-nav" id="bubbleNav">
+        <a class="nav-link" href="index.html">Beranda</a>
+        <a class="nav-link active" href="#beranda">Uang Kas</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- KAS -->
+    <section class="section section-soft" id="kas">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">TRANSPARANSI KEUANGAN</p>
+          <h2>Uang <span>Kas</span> Karang Taruna</h2>
+          <p>
+            Fitur kas ini berjalan tanpa database. Data tersimpan di browser menggunakan
+            <strong>localStorage</strong>, sehingga cocok untuk demo atau pencatatan sederhana.
+          </p>
+        </div>
+
+        <div class="cash-dashboard">
+          <div class="cash-summary">
+            <div class="cash-total">
+              <span>Saldo Kas</span>
+              <strong id="cashBalance">Rp 0</strong>
+              <small><i class="fa-solid fa-shield-heart"></i> Data lokal perangkat ini</small>
+            </div>
+            <div class="cash-stat income"><span>Total Pemasukan</span><strong id="cashIncome">Rp 0</strong></div>
+            <div class="cash-stat expense"><span>Total Pengeluaran</span><strong id="cashExpense">Rp 0</strong></div>
+          </div>
+
+          <div class="cash-panel">
+            <div class="panel-head">
+              <div><h3>Tambah Transaksi</h3><p>Catat pemasukan atau pengeluaran kas.</p></div>
+            </div>
+            <form id="cashForm" class="cash-form">
+              <div class="field"><label>Tanggal</label><input type="date" id="cashDate" required></div>
+              <div class="field"><label>Jenis</label><select id="cashType" required><option value="income">Pemasukan</option><option value="expense">Pengeluaran</option></select></div>
+              <div class="field"><label>Keterangan</label><input type="text" id="cashNote" placeholder="Contoh: Iuran anggota" required></div>
+              <div class="field"><label>Nominal</label><input type="number" id="cashAmount" min="1" placeholder="50000" required></div>
+              <button class="btn btn-primary" type="submit"><i class="fa-solid fa-plus"></i> Simpan</button>
+            </form>
+          </div>
+
+          <div class="cash-table-wrap">
+            <div class="panel-head">
+              <div><h3>Riwayat Kas</h3><p>Data dapat dihapus dari perangkat ini.</p></div>
+              <button class="btn btn-danger-outline" id="clearCash" type="button"><i class="fa-solid fa-trash"></i> Hapus Semua</button>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>Tanggal</th><th>Keterangan</th><th>Jenis</th><th>Nominal</th><th></th></tr></thead>
+                <tbody id="cashTableBody"></tbody>
+              </table>
+            </div>
+            <div class="empty-state" id="cashEmpty"><i class="fa-solid fa-receipt"></i><p>Belum ada transaksi kas.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.jpg" alt="Logo">
+        <div><strong>Karang Taruna KPR PDAM Klawuyuk</strong><span>Kota Sorong • Papua Barat Daya</span></div>
+      </div>
+      <p>© <span id="year"></span> Karang Taruna KPR PDAM Klawuyuk. Bersama, Berkarya, Peduli.</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"><i class="fa-solid fa-xmark"></i></button>
+    <div class="lightbox-content">
+      <i class="fa-solid fa-camera"></i>
+      <h3 id="lightboxTitle">Foto Kegiatan</h3>
+      <p>Masukkan foto kegiatan asli pada folder images untuk mengganti placeholder ini.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
